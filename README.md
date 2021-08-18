@@ -27,9 +27,9 @@ As each service has a limited functionality, it is much smaller in size and comp
 ## Advantages over Monolithic Architectures
 Developers simplify things to lower cognitive load and make their code easier to maintain and support. Modularity is one such simplification. Here are the advantages of using isolated microservices over all-in-one applications.
 - Variety of technologies
-- - Keeping services small makes them easy to test, since there are limited input variants. The only tricky part – a service may be unavailable due to network issues or another problem. So, if the service is dependent on its output, this possibility should be considered and tested.
+ - Keeping services small makes them easy to test, since there are limited input variants. The only tricky part – a service may be unavailable due to network issues or another problem. So, if the service is dependent on its output, this possibility should be considered and tested.
 - Easier testing of microservices
-- - Making and deploying a small code change iterations to the server is much easier with small separate services than with an entire monolithic application. A large monolith may take a while to test, build and deploy. In contrast, with a microservices, this often takes just minutes. Only the changed microservice needs to be re-deployed, and other stable working services stay untouched, making the release process faster and easier.
+ - Making and deploying a small code change iterations to the server is much easier with small separate services than with an entire monolithic application. A large monolith may take a while to test, build and deploy. In contrast, with a microservices, this often takes just minutes. Only the changed microservice needs to be re-deployed, and other stable working services stay untouched, making the release process faster and easier.
 - Continuous delivery and deployment
 - - Making and deploying a small code change iterations to the server is much easier with small separate services than with an entire monolithic application. A large monolith may take a while to test, build and deploy. In contrast, with a microservices, this often takes just minutes. Only the changed microservice needs to be re-deployed, and other stable working services stay untouched, making the release process faster and easier.
 - Optimized development process
