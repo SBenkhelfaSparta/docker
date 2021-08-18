@@ -7,7 +7,8 @@ You can view all containers by running `docker ps`.
 
 Finally you can ssh into the container by running `docker exec -it container_id_here sh`.
 
-
+## Copying Files over to a Container
+To copy a file to nginx in a docker instance you can use the command `docker cp localhost\file\location container_id:container/path`
 
 ## What is Docker?
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
