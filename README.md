@@ -21,7 +21,7 @@ Microservices architecture refers to a technique that gives modern developers a 
 
 Each service communicates with other services, through standardized application programming interfaces (APIs), enabling the services to be written in different languages or on different technologies. This differs completely from systems built as monolithic structures where services were inextricably interlinked and could only be scaled together.
 
-![img](microservice.jpg)
+![img](microservice.png)
 As each service has a limited functionality, it is much smaller in size and complexity. The term microservice comes from this discrete functionality design, not from its physical size.
 
 ## Advantages over Monolithic Architectures
