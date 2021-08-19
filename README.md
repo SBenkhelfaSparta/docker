@@ -1,5 +1,7 @@
 # Docker
 ## Making Docker Containers
+First things first, open up Git Bash and run `alias docker="winpty docker"` so that everything runs correctly just in case. "alias" adds an environment variable to your system.
+
 You can make containers from default templates by using the run command. For example, if you want to create a container with nginx you can do:
 `docker run -d -p 80:80 nginx`
 
@@ -8,34 +10,35 @@ You can view all containers by running `docker ps`.
 Finally you can ssh into the container by running `docker exec -it container_id_here sh`.
 
 ## Copying Files over to a Container
-To copy a file to nginx in a docker instance you can use the command `docker cp localhost\file\location container_id:container/path`
-
-## Using nginx to create a homepage
-For this task, the nginx container will be used to create a homepage.
-
-To run the nginx container:
+To copy a file to nginx in a docker instance you can use this command:
 ```
-docker run -d -p 80:80 nginx
+docker cp localhost\file\location container_id:container/path
 ```
 
-Accessing the container
+## Creating Docker Images
+This can be done via Dockerfiles. Create a file called "Dockerfile" with no extension. Here is code that uses the nginx image and places a file inside:
 ```
-docker exec -it 4f81caf0016b sh
-```
+FROM nginx
 
-To access the html directory
-```
-cd usr
-cd share
-cd nginx
-cd html
-# or alternatively
-cd usr/share/nginx/html
-```
+LABEL MAINTAINER=sbenkhelfa@spartaglobal.com
 
-To copy the file made in local machine to the container
+COPY index.html /usr/share/nginx/html/
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
 ```
-docker cp "C:/Users/Sandstorm3/Git_Repos/Eng89_Docker/index.html" 4f81caf0016b:usr/share/nginx/html/
+When you are done making your Dockerfile, open up terminal/cmd and cd into the folder with the Dockerfile. Here we will use the build command to create an image. 
+```
+docker build -t salemsparta/eng89_nginx_auto .
+```
+If you are not inside the folder with the Dockerfile, change the dot at the end to the path. Type in `docker images` to confirm it has been created.
+
+## Updating Docker Images
+If you don't have an instance of the newly created image, run `docker run -d -p 3500:80 username/image_name`.
+When you are done modifying the instance, run this:
+```
+docker push username/image_name
 ```
 
 ---
