@@ -10,6 +10,36 @@ Finally you can ssh into the container by running `docker exec -it container_id_
 ## Copying Files over to a Container
 To copy a file to nginx in a docker instance you can use the command `docker cp localhost\file\location container_id:container/path`
 
+## Using nginx to create a homepage
+For this task, the nginx container will be used to create a homepage.
+
+To run the nginx container:
+```
+docker run -d -p 80:80 nginx
+```
+
+Accessing the container
+```
+docker exec -it 4f81caf0016b sh
+```
+
+To access the html directory
+```
+cd usr
+cd share
+cd nginx
+cd html
+# or alternatively
+cd usr/share/nginx/html
+```
+
+To copy the file made in local machine to the container
+```
+docker cp "C:/Users/Sandstorm3/Git_Repos/Eng89_Docker/index.html" 4f81caf0016b:usr/share/nginx/html/
+```
+
+---
+
 ## What is Docker?
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production.
 
