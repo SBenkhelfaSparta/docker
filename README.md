@@ -3,11 +3,16 @@
 First things first, open up Git Bash and run `alias docker="winpty docker"` so that everything runs correctly just in case. "alias" adds an environment variable to your system.
 
 You can make containers from default templates by using the run command. For example, if you want to create a container with nginx you can do:
-`docker run -d -p 80:80 nginx`
+```
+docker run -d -p 80:80 nginx
+```
 
 You can view all containers by running `docker ps`.
 
-Finally you can ssh into the container by running `docker exec -it container_id_here sh`.
+Finally you can ssh into the container by running:
+```
+docker exec -it container_id_here sh
+```
 
 ## Copying Files over to a Container
 To copy a file to nginx in a docker instance you can use this command:
