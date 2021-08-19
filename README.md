@@ -41,6 +41,16 @@ When you are done modifying the instance, run this:
 docker push username/image_name
 ```
 
+## Docker Volumes
+To create a volume, run:
+```
+docker volume create vol_name
+```
+Now if you want to load up an app into the new volume, run:
+```
+docker run -d -p 3501:80 --name nginx_in_vol --mount source=salem_vol,target=/app nginx:latest
+```
+
 ---
 
 ## What is Docker?
